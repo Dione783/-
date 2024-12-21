@@ -25,9 +25,7 @@ input{
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-#video{
-    display: none;
-}
 a{
+    display: none;
     color: red;
 }
