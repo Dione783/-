@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>?????</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div id="container">
         <img id="scare" src="./images/Olhos.png">
         <div>
             <input type="number" placeholder="Number" id="input">
             <button id="button">Enter</button>
-            <a href="https://www.youtube.com/watch?v=igZvLDXdbLs" id="video">Não mexa com o que não sabe</a>
+            <p>Não mexa com o que não sabe</p>
+            <a href="https://www.youtube.com/watch?v=igZvLDXdbLs" id="video">Vai Arriscar?</a>
             <div id="div1">
                 <img id="eye1" src="./images/Scare.png">
             </div>
@@ -35,27 +38,33 @@
         let audio = document.getElementById("audio");
         let div1 = document.getElementById("div1");
         let div2 = document.getElementById("div2");
+        let text = document.querySelector("p");
         let trys = 0;
 
-        button.addEventListener("click",(event)=>{
-            if(input.value == "61604481"){
+        button.addEventListener("click", (event) => {
+            if (input.value == "61604481") {
                 video.style.display = "block";
-            }else{
+            } else {
                 trys++;
-                switch(trys){
-                    case 1:img1.style.display = "block";div1.style.display = "block";
-                    break
-                    case 2:img2.style.display = "block";div2.style.display = "block";
-                    break
-                    case 3:scare.style.display = "block"; 
-                    img1.style.display = "none";
-                    img2.style.display = "none";
-                    audio.currentTime = 1;
-                    audio.play()
-                    break
+                switch (trys) {
+                    case 1: img1.style.display = "block"; div1.style.display = "block";
+                    text.style.display = "block";
+                        break
+                    case 2: img2.style.display = "block"; div2.style.display = "block";
+                        break
+                    case 3: scare.style.display = "block";
+                        img1.style.display = "none";
+                        img2.style.display = "none";
+                        audio.currentTime = 1;
+                        audio.play()
+                        setTimeout(function () {
+                            location.reload();
+                        }, 3000);
+                        break
                 }
             }
         })
     </script>
 </body>
+
 </html>

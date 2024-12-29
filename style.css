@@ -4,6 +4,10 @@ html,body,*{
 html,body{
     background-color: black;
 }
+p{
+    color: red;
+    display: none;
+}
 #container #scare{
     position: absolute;
     width: 100%;
