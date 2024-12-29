@@ -7,21 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img id="scare" src="./images/Olhos.png">
     <div id="container">
         <div>
             <input type="number" placeholder="..." id="input">
             <button id="button">?????</button>
-            <a href="https://www.youtube.com/watch?v=igZvLDXdbLs" id="video">Correr este risco?</a> 
+            <a href="https://www.youtube.com/watch?v=igZvLDXdbLs" id="video">Não mexa com o que não sabe</a>
+            <div>
+                <img id="eye1" src="./images/Scare.png">
+            </div>
+            <div>
+                <img id="eye2" src="./images/Scare.png">
+            </div>
+            <audio id="audio" controls preload="auto">
+                <source src="./audio/DOORS A-90 Jumpscare Sound Effect.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
     <script>
         let input = document.getElementById("input");
         let button = document.getElementById("button");
         let video = document.getElementById("video");
-        
+        let img1 = document.getElementById("eye1");
+        let img2 = document.getElementById("eye2");
+        let scare = document.getElementById("scare");
+        let audio = document.getElementById("audio");
+        let trys = 0;
+
         button.addEventListener("click",(event)=>{
             if(input.value == "61604481"){
                 video.style.display = "block";
+            }else{
+                trys++;
+                switch(trys){
+                    case 1:img1.style.display = "block";
+                    break
+                    case 2:img2.style.display = "block";
+                    break
+                    case 3:scare.style.display = "block"; 
+                    img1.style.display = "none";
+                    img2.style.display = "none";
+                    audio.currentTime = 1;
+                    audio.play()
+                    break
+                }
             }
         })
     </script>
