@@ -4,10 +4,13 @@ html,body,*{
 html,body{
     background-color: black;
 }
-#scare{
+#container #scare{
     position: absolute;
     width: 100%;
     height: 100%;
+    display: none;
+}
+#container div div{
     display: none;
 }
 
@@ -29,6 +32,9 @@ html,body{
     margin: auto;
     max-width: 150px;
     max-height: 150px;
+}
+audio{
+    display: none;
 }
 
 
